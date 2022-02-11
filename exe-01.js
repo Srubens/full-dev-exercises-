@@ -52,7 +52,7 @@ const filteredImpar = (value) => value % 2 !== 0
 console.log( arr1.filter(filteredImpar).reduce(reduce) )
 
 console.log( '------------------------\n' )
-console.log(`4) Questao filter + reduce`)
+console.log(`4) Questao reduce`)
 
 const arr2 = [1,1,1,2,5,3,3,4,4,8,6]
 const howManyTimes = (agg, value) =>{
@@ -66,3 +66,26 @@ const howManyTimes = (agg, value) =>{
 
 const times = arr2.reduce(howManyTimes, {})
 console.log(times)
+
+console.log( '------------------------\n' )
+console.log(`5) Questao filter + reduce`)
+const arr3 = [1,1,2,44,5,3,6,4,8,'rubens', 'rubens']
+const howManyTimes1 = (agg, value) =>{
+    if( !agg[value] ){
+        agg[value] = {
+            value: value,
+            ocuur: 0
+        }
+    }
+    agg[value].ocuur = agg[value].ocuur + 1 
+    return agg 
+}
+const contagem = arr3.reduce(howManyTimes1, {})
+const keys = Object.keys(contagem)
+const unique = keys.filter(key => contagem[key].ocuur === 1)
+const uniqueValues = unique.map(val => contagem[val].value)
+// console.log( 'valor unique', unique )
+// console.log( 'contagem', contagem )
+// console.log( 'keys', keys )
+// console.log( arr3.reduce(howManyTimes1, {}) )
+console.log( 'valor unico', uniqueValues )
