@@ -36,4 +36,33 @@ const calculadoraFn = (....) => ….
 calculadoraFn(10, soma, 20
  */
 
+console.log(`1) Questao reduce`)
+const arr1 = [1,2,3,4,5,9]
+const reduce = (previousValue, currentValue) => previousValue + currentValue
+console.log( arr1.reduce(reduce) )
+console.log( '------------------------\n' )
 
+console.log(`2) Questao filter + reduce`)
+const filteredPar = (value) => value % 2 === 0
+console.log( arr1.filter(filteredPar).reduce(reduce) )
+
+console.log( '------------------------\n' )
+console.log(`3) Questao filter + reduce`)
+const filteredImpar = (value) => value % 2 !== 0
+console.log( arr1.filter(filteredImpar).reduce(reduce) )
+
+console.log( '------------------------\n' )
+console.log(`4) Questao filter + reduce`)
+
+const arr2 = [1,1,1,2,5,3,3,4,4,8,6]
+const howManyTimes = (agg, value) =>{
+    if(!agg[value]){
+        agg[value] = 0
+    }
+    agg[value] = agg[value] + 1
+    console.log(agg, value)
+    return agg
+}
+
+const times = arr2.reduce(howManyTimes, {})
+console.log(times)
