@@ -36,23 +36,27 @@ const calculadoraFn = (....) => ….
 calculadoraFn(10, soma, 20
  */
 
-console.log(`1) Questao reduce`)
+console.log(`1) Dado um vetor de números, como poderia ser 
+realizada a soma de todos os valores utilizando reduce.`)
 const arr1 = [1,2,3,4,5,9]
 const reduce = (previousValue, currentValue) => previousValue + currentValue
 console.log( arr1.reduce(reduce) )
 console.log( '------------------------\n' )
 
-console.log(`2) Questao filter + reduce`)
+console.log(`2) Dado um vetor de números, como poderia ser realizada 
+a soma de todos os valores pares utilizando reduce e filter.`)
 const filteredPar = (value) => value % 2 === 0
 console.log( arr1.filter(filteredPar).reduce(reduce) )
 
 console.log( '------------------------\n' )
-console.log(`3) Questao filter + reduce`)
+console.log(`3) Dado um vetor de números, como poderia ser realizada a 
+soma de todos os valores ímpares utilizando reduce e filter.`)
 const filteredImpar = (value) => value % 2 !== 0
 console.log( arr1.filter(filteredImpar).reduce(reduce) )
 
 console.log( '------------------------\n' )
-console.log(`4) Questao reduce`)
+console.log(`4) Dado um vetor de valores, retorne um objeto com quantas 
+vezes cada valor está presente no vetor (dica: utilize reduce)`)
 
 const arr2 = [1,1,1,2,5,3,3,4,4,8,6]
 const howManyTimes = (agg, value) =>{
@@ -60,7 +64,7 @@ const howManyTimes = (agg, value) =>{
         agg[value] = 0
     }
     agg[value] = agg[value] + 1
-    console.log(agg, value)
+    // console.log(agg, value)
     return agg
 }
 
@@ -68,7 +72,7 @@ const times = arr2.reduce(howManyTimes, {})
 console.log(times)
 
 console.log( '------------------------\n' )
-console.log(`5) Questao filter + reduce`)
+console.log(`5) Dado um vetor de valores, retorne um vetor com somente os valores únicos do vetor (aqueles que ocorrem apenas 1 vez dentro do vetor) (Dica 1: utilize reduce, filter e keys, Dica 2: escreva console.log(objeto.keys()) e veja como ele poderá te ajudar neste exercício)`)
 const arr3 = [1,1,2,44,5,3,6,4,8,'rubens', 'rubens']
 const howManyTimes1 = (agg, value) =>{
     if( !agg[value] ){
@@ -91,16 +95,20 @@ const uniqueValues = unique.map(val => contagem[val].value)
 console.log( 'valor unico', uniqueValues )
 
 console.log( '------------------------\n' )
-console.log(`6) Questao filter `)
+console.log(`6) Dado um vetor com números, retorne somente os números pares; `)
 const arr4 = [1 ,2,3,4,5,6,8,7,16] 
 console.log( arr4.filter(filteredPar) )
 
 console.log( '------------------------\n' )
-console.log(`7) Questao filter `)
+console.log(`7) Dado um vetor com números, retorne somente os números ímpares;`)
 console.log( arr4.filter(filteredImpar) )
 
 console.log( '------------------------\n' )
-console.log(`8) Questao `)
+console.log(`8) Uma função é chamada da seguinte forma:
+
+calculadora(10, '+', 20)
+
+crie o corpo da função de forma que ela realize as 4 operações aritméticas`)
 const calculadora = (a, param, b) =>{
     switch(param){
         case "+":
@@ -125,7 +133,13 @@ calculadora(4,'*',4)
 calculadora(16,'/',4)
 
 console.log( '------------------------\n' )
-console.log(`9) Questao `)
+console.log(`9)Modifique a calculadora do exercício anterior para que ela receba 2 números e uma função, e realize o cálculo. Exemplo:
+
+const soma = (num1, num2) => num1+num2
+
+const calculadoraFn = (....) => ….
+
+calculadoraFn(10, soma, 20`)
 const calculadoraFn = (a, param, b) => param(a,b)
 const somaValue = (a,b) => a + b
 const newSub = (a,b) => a - b
