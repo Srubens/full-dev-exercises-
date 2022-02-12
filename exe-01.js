@@ -89,3 +89,45 @@ const uniqueValues = unique.map(val => contagem[val].value)
 // console.log( 'keys', keys )
 // console.log( arr3.reduce(howManyTimes1, {}) )
 console.log( 'valor unico', uniqueValues )
+
+console.log( '------------------------\n' )
+console.log(`6) Questao filter `)
+const arr4 = [1 ,2,3,4,5,6,8,7,16] 
+console.log( arr4.filter(filteredPar) )
+
+console.log( '------------------------\n' )
+console.log(`7) Questao filter `)
+console.log( arr4.filter(filteredImpar) )
+
+console.log( '------------------------\n' )
+console.log(`8) Questao `)
+const calculadora = (a, param, b) =>{
+    switch(param){
+        case "+":
+            console.log(a + b)
+        break;
+        case "-":
+            console.log(a - b)
+        break;
+        case "*":
+            console.log(a * b)
+        break;
+        case "/":
+            console.log(a / b)
+        break;
+        defualt:
+            console.log('valor invalido: ')
+    }
+}
+calculadora(4,'+',4)
+calculadora(6,'-',4)
+calculadora(4,'*',4)
+calculadora(16,'/',4)
+
+console.log( '------------------------\n' )
+console.log(`9) Questao `)
+const calculadoraFn = (a, param, b) => param(a,b)
+const somaValue = (a,b) => a + b
+const newSub = (a,b) => a - b
+console.log(calculadoraFn(10, somaValue, 20))
+console.log(calculadoraFn(10, newSub, 20))
